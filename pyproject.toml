@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "interview-apono"
+version = "0.1.0"
+description = ""
+authors = ["OrMoshe <ormoshe2204@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "1.6.2"
+pydantic-loader = "^0.9.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+select = ["A", "B", "C", "E", "F", "B"]
+ignore = ["E501"]
+
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+python_files = "tests.py test_*.py *_tests.py"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning",
+]
